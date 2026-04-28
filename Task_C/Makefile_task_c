@@ -1,0 +1,15 @@
+CXX = g++
+CXXFLAGS = -O2 -std=c++17 -Wall -Wextra -pthread
+TARGET = task_c_thread_merge_sort
+SRC = task_c_thread_merge_sort.cpp
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET)
+
+run: $(TARGET)
+	./$(TARGET)
+
+clean:
+	rm -f $(TARGET) task_c_thread_results.csv task_c_thread_results.png task_c_thread_speedup.png
